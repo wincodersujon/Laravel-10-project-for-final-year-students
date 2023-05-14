@@ -14,22 +14,24 @@
 
         <div class="card">
             <div class="card-header">
-                <h3>My Order Details</h3>
-            </div>
-            <div class="card-body">
+                <h3>My Order Details
+            {{-- </div> --}}
+            {{-- <div class="card-body"> --}}
 
-                    <h4 class="text-primary">
-                        <i class="fa fa-shopping-cart text-dark"></i>My Order Details
-                        <a href="{{ url('admin/orders') }}" class="btn btn-danger btn-sm float-end">Back</a>
+                        <a href="{{ url('admin/orders') }}" class="btn btn-danger btn-sm float-end max-1">Back</a>
                         <a href="{{ url('admin/invoice/'.$order->id.'/generate') }}" class="btn btn-primary btn-sm float-end mx-1">
                             Download Invoice
                         </a>
                        <a href="{{ url('admin/invoice/'.$order->id) }}" target="_blank" class="btn btn-warning btn-sm float-end mx-1">
                             View Invoice
                         </a>
-                    </h4>
-                    <hr>
+                        <a href="{{ url('admin/invoice/'.$order->id.'/mail') }}" class="btn btn-info btn-sm float-end mx-1">
+                           Send Invoice Via Mail
+                        </a>
+                    </h3>
+                    </div>
 
+                    <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
                             <h5>Order Details</h5>
@@ -52,6 +54,7 @@
 
                         </div>
                     </div>
+
                     <br/>
                     <h5>Order Items</h5>
                     <hr>
@@ -113,7 +116,6 @@
                         </table>
 
                     </div>
-
             </div>
         </div>
 
@@ -148,7 +150,7 @@
                 </div>
             </div>
         </div>
-
+    </div>
     </div>
 </div>
 

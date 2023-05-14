@@ -51,6 +51,8 @@ Route::middleware('auth')->group(function(){
 //User Profile Show
     Route::get('profile',[App\Http\Controllers\Frontend\UserController::class,'index']);
     Route::post('profile',[App\Http\Controllers\Frontend\UserController::class,'updateUserDetails']);
+    Route::get('change-password',[App\Http\Controllers\Frontend\UserController::class,'passwordCreate']);
+    Route::post('change-password',[App\Http\Controllers\Frontend\UserController::class,'changePassword']);
 
 });
 
@@ -120,6 +122,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
 
         Route::get('/invoice/{orderId}', 'viewInvoice');
         Route::get('/invoice/{orderId}/generate', 'generateInvoice');
+        Route::get('/invoice/{orderId}/mail', 'mailInvoice');
 
 
     });
