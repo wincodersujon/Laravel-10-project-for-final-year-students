@@ -97,6 +97,10 @@ class CheckoutShow extends Component
     {
         $this->fullname = auth()->user()->name;
         $this->email = auth()->user()->email;
+
+        $this->phone = auth()->user()->userDetail->phone;
+        $this->pincode = auth()->user()->userDetail->pin_code;
+        $this->address = auth()->user()->userDetail->address;
         $this->totalProductAmount =$this->totalProductAmount();
         return view('livewire.frontend.checkout.checkout-show',[
             'totalProductAmount' => $this->totalProductAmount

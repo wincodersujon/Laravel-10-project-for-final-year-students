@@ -84,4 +84,5 @@ class OrderController extends Controller
         return redirect('admin/orders/'.$orderId)->with('message','Something Went Wrong.!');
         }
     }
+
 }

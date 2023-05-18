@@ -13,6 +13,7 @@ class InvoiceOrderMailable extends Mailable
 {
     use Queueable, SerializesModels;
     public $order;
+
     /**
      * Create a new message instance.
      */
@@ -20,11 +21,11 @@ class InvoiceOrderMailable extends Mailable
     {
         $this->order = $order;
     }
-
     public function build()
     {
         $subject = "Your Order Invoice";
-        return $this->subject($subject)->view('admin.invoice.generate-invoice');
+        return $this->subject($subject)
+        ->view('admin.invoice.generate-invoice');
     }
 
     /**
@@ -33,7 +34,7 @@ class InvoiceOrderMailable extends Mailable
     // public function envelope(): Envelope
     // {
     //     return new Envelope(
-    //         subject: 'Invoice Order Mailable',
+    //         subject: 'Your Order Invoice',
     //     );
     // }
 
@@ -42,8 +43,9 @@ class InvoiceOrderMailable extends Mailable
     //  */
     // public function content(): Content
     // {
+    //     $subject = "Your Order Invoice";
     //     return new Content(
-    //         view: 'view.name',
+    //         view: 'admin.invoice.generate-invoice',
     //     );
     // }
 
